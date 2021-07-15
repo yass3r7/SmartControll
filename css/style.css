@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #17262b;
+    color: white;
+    font-family: "Lato";
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.row>.col {
+    position: relative;
+    height: 6em;
+    padding: 2em;
+    padding-bottom: 8em;
+}
+
+.loading {
+    width: 6em;
+    height: 6em;
+    line-height: 6em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 2px solid #00d8ff;
+    border-radius: 100%;
+    box-shadow: 0 0 0 0 #17262b, 0 0 2px 3px #00d8ff, 0 0 4px 25px #17262b,
+        0 0 1px 32px #17262b, 0 0 32px 25px #00d8ff, 0 0 32px 25px #17262b;
+    font-size: 0.8em;
+    color: #fff;
+    cursor: pointer;
+    animation: pulse 1.4s linear infinite;
+    transition: all 0.3s ease;
+}
+
+.loading:before {
+    content: "";
+    border-radius: 100%;
+    animation: rotate 0.45s linear infinite;
+    transition: opacity 1s ease 0.6s, border 0.4s ease 0s, width 0.4s ease 0.2s,
+        height 0.4s ease 0.2s, margin 0.4s ease 0.2s;
+    position: absolute;
+    left: 6%;
+    top: 6%;
+    width: 5em;
+    height: 5em;
+    border-top: 2px solid #00d8ff;
+    border-bottom: 2px solid #fff;
+}
+
+.loading.on {
+    color: #fff;
+}
+
+.loading.on:before {
+    animation: none;
+}
+
+.loading.off {
+    border-color: #0088a0;
+    box-shadow: 0 0 10px 2px #0088a0;
+    animation: none;
+    color: #bbb;
+}
+
+.loading.off:before {
+    content: "";
+    animation: none;
+    border-top: 2px solid #0088a0;
+    border-bottom: 2px solid #bbb;
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #17262b, 0 0 2px 3px #00d8ff, 0 0 1px 32px #17262b,
+            0 0 32px 25px #00d8ff;
+    }
+
+    49.9% {
+        box-shadow: 0 0 1px 32px #17262b, 0 0 32px 25px #00d8ff,
+            0 0 1px 64px #17262b, 0 0 60px 25px #00d8ff;
+    }
+
+    50% {
+        box-shadow: 0 0 0 0 #17262b, 0 0 2px 3px #00d8ff, 0 0 1px 32px #17262b,
+            0 0 32px 25px #00d8ff;
+    }
+
+    100% {
+        box-shadow: 0 0 1px 32px #17262b, 0 0 32px 25px #00d8ff,
+            0 0 1px 64px #17262b, 0 0 60px 25px #00d8ff;
+    }
+}
