@@ -13,21 +13,16 @@ int IN3 = 4; // D2
 int IN4 = 0; // D3
 
 // WiFi Network
-const char ssid[] = "DJAWEB_YOJIROU_HANMMA"; // D-Medi@Net + DJAWEB_YOJIROU_HANMMA + YASSER_
-const char password[] = "netstat 123"; // red486732 + netstat 123 + 123456aa
+const char ssid[] = "IEP"; // WiFi SSID
+const char password[] = "IEP2021_by7"; // Password
 
 // Network static IP
-IPAddress ip(192, 168, 1, 100); // 192.168.137.1
-IPAddress dns(192, 168, 1, 1);
+IPAddress ip(192, 168, 1, 100); // NodeMCU Fixed IP
 IPAddress gateway(192, 168, 1, 1);
-IPAddress subnet(255, 255, 255, 255);
+IPAddress subnet(255, 255, 255, 0);
 
 // Create web server
 ESP8266WebServer server(80);
-
-// Web Page
-char temp[100];
-char htmlPage[100] = "<h1>Yasser's Project</h1>";
 
 void setup() {
 
